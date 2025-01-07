@@ -1,0 +1,20 @@
+#sidebar {
+  width: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: black;
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .copyright {
+    color: white;
+    writing-mode: vertical-rl;
+    transform: rotate(-180deg);
+  }
+}

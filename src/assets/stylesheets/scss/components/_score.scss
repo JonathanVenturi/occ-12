@@ -1,0 +1,27 @@
+.score {
+  position: relative;
+  aspect-ratio: 1;
+  background-color: #fbfbfb;
+  border-radius: 5px;
+  grid-area: 2 / 3 / 3 / 4;
+
+  .label {
+    position: absolute;
+    padding: 20px;
+    font-weight: bold;
+  }
+
+  .legend {
+    position: absolute;
+    height: 75%;
+    width: 75%;
+    margin: 12.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+}
