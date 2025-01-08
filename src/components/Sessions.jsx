@@ -1,30 +1,37 @@
-import UserContext from '../UserContext'
-import { useContext } from 'react'
+import PropTypes from 'prop-types'
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts'
-import useGetUserSessions from '../hooks/UseGetUserSessions'
 
-function Sessions() {
-  const { UserID } = useContext(UserContext)
-  const userSessions = useGetUserSessions(UserID)
-
+function Sessions({ sessionsData }) {
   return (
     <div className='sessions'>
+      <div className='caption'>Durée moyenne des sessions</div>
+
       <ResponsiveContainer width='100%' height='100%'>
         <LineChart
-          data={userSessions}
+          data={sessionsData}
           margin={{
-            top: 5,
-            right: 5,
-            left: 5,
+            top: 50,
+            right: 0,
+            left: 0,
             bottom: 5
           }}>
           <XAxis dataKey='day' />
-          <Tooltip />
-          <Line type='monotone' dataKey='sessionLength' stroke='#82ca9d' />
+          <Tooltip itemStyle={{ color: 'black' }} />
+          <Line
+            type='natural'
+            dataKey='sessionLength'
+            stroke='#fbfbfb'
+            strokeWidth={2}
+            dot={false}
+          />
         </LineChart>
       </ResponsiveContainer>
     </div>
   )
+}
+
+Sessions.propTypes = {
+  sessionsData: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default Sessions

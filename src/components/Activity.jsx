@@ -1,45 +1,40 @@
-import UserContext from '../UserContext'
-import { useContext } from 'react'
-import useGetUserActivity from '../hooks/UseGetUserActivity'
+import PropTypes from 'prop-types'
 
 import {
+  ResponsiveContainer,
   BarChart,
   Bar,
   XAxis,
   YAxis,
   CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer
+  Tooltip
 } from 'recharts'
 
-function Activity() {
-  const { UserID } = useContext(UserContext)
-  const userActivity = useGetUserActivity(UserID)
-
+function Activity({ activity }) {
   return (
     <div className='activity'>
+      <div className='caption'>
+        <div className='emphasis'>Activité quotidienne</div>
+        <div className='label subtext'>
+          <span className='dot black'>Poids (kg)</span>
+          <span className='dot red'>Calories brûlées (kCal)</span>
+        </div>
+      </div>
       <ResponsiveContainer width='100%' height='100%'>
         <BarChart
           barSize={10}
-          data={userActivity}
+          data={activity}
           margin={{
-            top: 50,
+            top: 60,
             right: 0,
             left: 0,
-            bottom: 5
+            bottom: 0
           }}>
           <CartesianGrid strokeDasharray='3 3' />
           <XAxis dataKey='day' />
           <YAxis yAxisId='left' orientation='left' stroke='black' />
           <YAxis yAxisId='right' orientation='right' stroke='red' />
           <Tooltip />
-          <Legend
-            align='right'
-            verticalAlign='top'
-            iconSize={10}
-            wrapperStyle={{ top: 20, right: 20 }}
-          />
           <Bar
             radius={[10, 10, 0, 0]}
             yAxisId='left'
@@ -56,6 +51,10 @@ function Activity() {
       </ResponsiveContainer>
     </div>
   )
+}
+
+Activity.propTypes = {
+  activity: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default Activity

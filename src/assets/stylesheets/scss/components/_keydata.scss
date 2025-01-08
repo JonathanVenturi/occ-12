@@ -17,13 +17,11 @@
   }
 
   .dataentry {
-    font-size: 0.9rem;
-    color: #74798c;
-  }
-
-  .data {
-    color: black;
-    font-size: 1.25rem;
-    font-weight: bold;
+    .emphasis {
+      font-size: 1.25rem;
+    }
+    .subtext {
+      font-size: 0.9rem;
+    }
   }
 }

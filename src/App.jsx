@@ -3,6 +3,7 @@ import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
 import UserContext from './UserContext'
 
 import Dashboard from './pages/Dashboard'
+import Profile from './pages/Profile'
 import Settings from './pages/Settings'
 
 import logo from '/favicon.svg'
@@ -14,7 +15,7 @@ import icon_4 from './assets/images/icon_4.png'
 function App() {
   // TODO - Bool variable for API
 
-  const [UserID, setUserID] = useState(12)
+  const [UserID, setUserID] = useState(18)
 
   return (
     <BrowserRouter>
@@ -49,7 +50,7 @@ function App() {
           <main>
             <Routes>
               <Route path='/' element={<Dashboard />} />
-              <Route path='/profile' element={<Dashboard />} />
+              <Route path='/profile' element={<Profile />} />
               <Route path='/settings' element={<Settings />} />
               <Route path='/community' element={<Dashboard />} />
 

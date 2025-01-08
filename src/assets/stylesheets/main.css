@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap");
 *,
 *::before,
 *::after {
@@ -39,7 +39,17 @@ h1 {
 }
 
 .highlight {
-  color: red;
+  color: #ff0101;
+}
+
+.emphasis {
+  color: #282d30;
+  font-weight: 700;
+}
+
+.subtext {
+  color: #74798c;
+  font-weight: 500;
 }
 
 .daily-summary {
@@ -47,16 +57,60 @@ h1 {
 }
 
 .activity {
+  position: relative;
   background-color: #fbfbfb;
   border-radius: 5px;
   grid-area: 1/1/2/4;
 }
+.activity .recharts-layer {
+  font-size: 0.8rem;
+}
+.activity .caption {
+  position: absolute;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.activity .caption .label {
+  display: flex;
+  gap: 30px;
+}
+.activity .caption .label .dot::before {
+  content: " ";
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+.activity .caption .label .dot.black::before {
+  background-color: #282d30;
+}
+.activity .caption .label .dot.red::before {
+  background-color: #ff0101;
+}
 
 .sessions {
+  position: relative;
   aspect-ratio: 1;
   background-color: #ff0000;
   border-radius: 5px;
   grid-area: 2/1/3/2;
+}
+.sessions .caption {
+  position: absolute;
+  width: 60%;
+  padding: 20px;
+  font-weight: 500;
+  color: #ffffff;
+}
+.sessions .recharts-layer {
+  font-size: 0.8rem;
+}
+.sessions .recharts-default-tooltip {
+  color: #282d30;
 }
 
 .performance {
@@ -78,7 +132,7 @@ h1 {
   padding: 20px;
   font-weight: bold;
 }
-.score .legend {
+.score .caption {
   position: absolute;
   height: 75%;
   width: 75%;
@@ -90,6 +144,14 @@ h1 {
   background-color: white;
   overflow: hidden;
   border-radius: 50%;
+  color: #74798c;
+  font-weight: 500;
+  text-wrap: balance;
+}
+.score .caption .emphasis {
+  color: #282d30;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .keydata {
@@ -108,14 +170,11 @@ h1 {
   background-color: #fbfbfb;
   border-radius: 5px;
 }
-.keydata .dataentry {
-  font-size: 0.9rem;
-  color: #74798c;
-}
-.keydata .data {
-  color: black;
+.keydata .dataentry .emphasis {
   font-size: 1.25rem;
-  font-weight: bold;
+}
+.keydata .dataentry .subtext {
+  font-size: 0.9rem;
 }
 
 #content {
@@ -145,21 +204,21 @@ header .logo {
   gap: 15px;
 }
 header .logo span {
-  color: #e60000;
+  color: #ff0101;
 }
 header nav {
+  color: #ffffff;
   width: 100%;
   display: flex;
   justify-content: space-between;
   gap: 20px;
 }
 header nav .active {
-  font-weight: bold;
-  font-style: italic;
+  font-weight: 900;
 }
 
 #sidebar {
-  width: 110px;
+  min-width: 110px;
   display: flex;
   flex-direction: column;
   align-items: center;

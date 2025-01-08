@@ -1,12 +1,7 @@
-import { useContext } from 'react'
+import PropTypes from 'prop-types'
 import { ResponsiveContainer, RadialBarChart, RadialBar } from 'recharts'
-import UserContext from '../UserContext'
-import useGetUserInfos from '../hooks/UseGetUserInfos'
 
-function Score() {
-  const { UserID } = useContext(UserContext)
-  const { score } = useGetUserInfos(UserID)
-
+function Score({ score }) {
   const data = [
     {
       score: 100,
@@ -21,8 +16,8 @@ function Score() {
   return (
     <div className='score'>
       <div className='label'>Score</div>
-      <div className='legend'>
-        {score}%<span>de votre objectif</span>
+      <div className='caption'>
+        <span className='emphasis'>{score}%</span> de votre objectif
       </div>
       <ResponsiveContainer width='100%' height='100%'>
         <RadialBarChart
@@ -37,6 +32,10 @@ function Score() {
       </ResponsiveContainer>
     </div>
   )
+}
+
+Score.propTypes = {
+  score: PropTypes.number.isRequired
 }
 
 export default Score

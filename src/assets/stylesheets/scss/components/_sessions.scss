@@ -1,6 +1,23 @@
 .sessions {
+  position: relative;
   aspect-ratio: 1;
   background-color: #ff0000;
   border-radius: 5px;
   grid-area: 2 / 1 / 3 / 2;
+
+  .caption {
+    position: absolute;
+    width: 60%;
+    padding: 20px;
+    font-weight: 500;
+    color: #ffffff;
+  }
+
+  .recharts-layer {
+    font-size: 0.8rem;
+  }
+
+  .recharts-default-tooltip {
+    color: $darker;
+  }
 }

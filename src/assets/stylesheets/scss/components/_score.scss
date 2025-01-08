@@ -11,7 +11,7 @@
     font-weight: bold;
   }
 
-  .legend {
+  .caption {
     position: absolute;
     height: 75%;
     width: 75%;
@@ -23,5 +23,13 @@
     background-color: white;
     overflow: hidden;
     border-radius: 50%;
+    color: #74798c;
+    font-weight: 500;
+    text-wrap: balance;
+    .emphasis {
+      color: $darker;
+      font-size: 2rem;
+      font-weight: bold;
+    }
   }
 }

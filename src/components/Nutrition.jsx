@@ -1,49 +1,50 @@
-import { useContext } from 'react'
-import UserContext from '../UserContext'
-import useGetUserNutritionData from '../hooks/UseGetUserNutritionData'
+import PropTypes from 'prop-types'
 
 import calories_icon from '../assets/images/calories-icon.png'
 import protein_icon from '../assets/images/protein-icon.png'
 import carbs_icon from '../assets/images/carbs-icon.png'
 import fat_icon from '../assets/images/fat-icon.png'
 
-function KeyData() {
-  const { UserID } = useContext(UserContext)
+function Nutrition({ nutritionData }) {
   const { calorieCount, proteinCount, carbohydrateCount, lipidCount } =
-    useGetUserNutritionData(UserID)
+    nutritionData
 
   return (
     <div className='keydata'>
       <div className='calories'>
         <img src={calories_icon} />
         <div className='dataentry'>
-          <p className='data'>{calorieCount}kCals</p>
-          <p>Calories</p>
+          <p className='emphasis'>{calorieCount}kCals</p>
+          <p className='subtext'>Calories</p>
         </div>
       </div>
       <div className='proteins'>
         <img src={protein_icon} />
         <div className='dataentry'>
-          <p className='data'>{proteinCount}g</p>
-          <p>Proteines</p>
+          <p className='emphasis'>{proteinCount}g</p>
+          <p className='subtext'>Proteines</p>
         </div>{' '}
       </div>
       <div className='carbohydrates'>
         <img src={carbs_icon} />
         <div className='dataentry'>
-          <p className='data'>{carbohydrateCount}g</p>
-          <p>Glucides</p>
+          <p className='emphasis'>{carbohydrateCount}g</p>
+          <p className='subtext'>Glucides</p>
         </div>{' '}
       </div>
       <div className='lipids'>
         <img src={fat_icon} />
         <div className='dataentry'>
-          <p className='data'>{lipidCount}g</p>
-          <p>Lipides</p>{' '}
+          <p className='emphasis'>{lipidCount}g</p>
+          <p className='subtext'>Lipides</p>{' '}
         </div>
       </div>
     </div>
   )
 }
 
-export default KeyData
+Nutrition.propTypes = {
+  nutritionData: PropTypes.object.isRequired
+}
+
+export default Nutrition

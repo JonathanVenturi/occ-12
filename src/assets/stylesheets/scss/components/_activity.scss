@@ -1,5 +1,42 @@
 .activity {
+  position: relative;
+
   background-color: #fbfbfb;
   border-radius: 5px;
   grid-area: 1 / 1 / 2 / 4;
+
+  .recharts-layer {
+    // color: $dark;
+    font-size: 0.8rem;
+  }
+
+  .caption {
+    position: absolute;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .label {
+      display: flex;
+      gap: 30px;
+
+      .dot::before {
+        content: ' ';
+        display: inline-block;
+        height: 10px;
+        width: 10px;
+        margin-right: 10px;
+        border-radius: 5px;
+      }
+
+      .dot.black::before {
+        background-color: $darker;
+      }
+      .dot.red::before {
+        background-color: $primary;
+      }
+    }
+  }
 }
