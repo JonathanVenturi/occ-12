@@ -58,30 +58,50 @@ function Dashboard() {
           <p>{summary}</p>
         </div>
       ) : (
-        <div>Loading</div>
+        <div className='daily-summary'>
+          <div className='loader'>
+            <div className='spinner'></div>
+          </div>
+        </div>
       )}
 
       <div className='dashboard'>
         {userActivity.status == 'ready' ? (
           <Activity activity={userActivity.data} />
         ) : (
-          <div>Loading</div>
+          <div className='activity'>
+            <div className='loader'>
+              <div className='spinner'></div>
+            </div>
+          </div>
         )}
         {userSessions.status == 'ready' ? (
           <Sessions sessionsData={userSessions.data} />
         ) : (
-          <div>Loading</div>
+          <div className='sessions'>
+            <div className='loader'>
+              <div className='spinner'></div>
+            </div>
+          </div>
         )}
         {userPerformance.status == 'ready' ? (
           <Performance performanceData={userPerformance.data} />
         ) : (
-          <div>Loading</div>
+          <div className='performance'>
+            <div className='loader'>
+              <div className='spinner'></div>
+            </div>
+          </div>
         )}
         {score && <Score score={score} />}
         {userNutritionData.status == 'ready' ? (
           <Nutrition nutritionData={userNutritionData.data} />
         ) : (
-          <div>Loading</div>
+          <div className='keydata'>
+            <div className='loader'>
+              <div className='spinner'></div>
+            </div>
+          </div>
         )}
       </div>
     </>
