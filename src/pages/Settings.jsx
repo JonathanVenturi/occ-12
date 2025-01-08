@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import UserContext from '../UserContext'
+import { UserContext } from '../exports/UserContext'
 
 function Settings() {
   const { UserID, setUserID } = useContext(UserContext)
