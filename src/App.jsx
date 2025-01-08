@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
-import UserContext from './UserContext'
+import { UserContext } from './exports/UserContext'
 
 import Dashboard from './pages/Dashboard'
 import Profile from './pages/Profile'
