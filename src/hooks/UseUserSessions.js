@@ -13,8 +13,9 @@ export function useUserSessions(id) {
   } else if (error) {
     status = 'error'
   } else {
-    status = 'ready'
     data = new SessionsData(response)
+    if (data.length != 0) status = 'ready'
+    else status = 'error'
   }
 
   return { status, data }

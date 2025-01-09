@@ -13,8 +13,9 @@ export function useUserNutritionData(id) {
   } else if (error) {
     status = 'error'
   } else {
-    status = 'ready'
     data = new NutritionData(response)
+    if (data.calorieCount) status = 'ready'
+    else status = 'error'
   }
 
   return { status, data }

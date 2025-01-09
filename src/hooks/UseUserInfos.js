@@ -13,8 +13,9 @@ export function useUserInfos(id) {
   } else if (error) {
     status = 'error'
   } else {
-    status = 'ready'
     data = new UserInfos(response)
+    if (data.firstName) status = 'ready'
+    else status = 'error'
   }
 
   return { status, data }

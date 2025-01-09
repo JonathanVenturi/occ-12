@@ -44,7 +44,12 @@ function Nutrition({ nutritionData }) {
 }
 
 Nutrition.propTypes = {
-  nutritionData: PropTypes.object.isRequired
+  nutritionData: PropTypes.exact({
+    calorieCount: PropTypes.number.isRequired,
+    proteinCount: PropTypes.number.isRequired,
+    carbohydrateCount: PropTypes.number.isRequired,
+    lipidCount: PropTypes.number.isRequired
+  }).isRequired
 }
 
 export default Nutrition

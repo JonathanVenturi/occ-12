@@ -54,7 +54,13 @@ function Activity({ activity }) {
 }
 
 Activity.propTypes = {
-  activity: PropTypes.arrayOf(PropTypes.object).isRequired
+  activity: PropTypes.arrayOf(
+    PropTypes.exact({
+      day: PropTypes.string.isRequired,
+      kilogram: PropTypes.number.isRequired,
+      calories: PropTypes.number.isRequired
+    })
+  ).isRequired
 }
 
 export default Activity

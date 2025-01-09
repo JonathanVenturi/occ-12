@@ -31,7 +31,12 @@ function Sessions({ sessionsData }) {
 }
 
 Sessions.propTypes = {
-  sessionsData: PropTypes.arrayOf(PropTypes.object).isRequired
+  sessionsData: PropTypes.arrayOf(
+    PropTypes.exact({
+      day: PropTypes.number.isRequired,
+      sessionLength: PropTypes.number.isRequired
+    })
+  ).isRequired
 }
 
 export default Sessions

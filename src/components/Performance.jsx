@@ -23,7 +23,12 @@ function Performance({ performanceData }) {
 }
 
 Performance.propTypes = {
-  performanceData: PropTypes.arrayOf(PropTypes.object).isRequired
+  performanceData: PropTypes.arrayOf(
+    PropTypes.exact({
+      kind: PropTypes.string.isRequired,
+      value: PropTypes.number.isRequired
+    })
+  ).isRequired
 }
 
 export default Performance
