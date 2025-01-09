@@ -93,7 +93,15 @@ function Dashboard() {
             </div>
           </div>
         )}
-        {score && <Score score={score} />}
+        {userInfos.status == 'ready' ? (
+          <Score score={score} />
+        ) : (
+          <div className='score'>
+            <div className='loader'>
+              <div className='spinner'></div>
+            </div>
+          </div>
+        )}
         {userNutritionData.status == 'ready' ? (
           <Nutrition nutritionData={userNutritionData.data} />
         ) : (
