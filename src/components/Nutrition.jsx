@@ -10,7 +10,7 @@ function Nutrition({ nutritionData }) {
     nutritionData
 
   return (
-    <div className='keydata'>
+    <div className='component nutrition'>
       <div className='calories'>
         <img src={calories_icon} />
         <div className='dataentry'>

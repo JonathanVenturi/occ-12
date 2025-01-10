@@ -10,9 +10,9 @@ import {
 
 function Performance({ performanceData }) {
   return (
-    <div className='performance'>
+    <div className='component performance'>
       <ResponsiveContainer width='100%' height='100%'>
-        <RadarChart outerRadius='75%' data={performanceData}>
+        <RadarChart outerRadius='60%' data={performanceData}>
           <PolarGrid />
           <PolarAngleAxis dataKey='kind' />
           <Radar dataKey='value' stroke='red' fill='red' fillOpacity={0.6} />

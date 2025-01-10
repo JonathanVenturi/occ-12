@@ -14,7 +14,7 @@ function Score({ score }) {
   ]
 
   return (
-    <div className='score'>
+    <div className='component score'>
       <div className='label'>Score</div>
       <div className='caption'>
         <span className='emphasis'>{score}%</span> de votre objectif

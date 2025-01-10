@@ -1,7 +1,42 @@
+.daily-summary {
+  padding-bottom: 30px;
+}
+
 .dashboard {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 20px;
   grid-row-gap: 20px;
+
+  > .activity {
+    grid-area: 1 / 1 / 2 / 4;
+    background-color: #fbfbfb;
+    border-radius: 5px;
+  }
+
+  > .sessions {
+    aspect-ratio: 1;
+    background-color: #ff0000;
+    border-radius: 5px;
+    grid-area: 2 / 1 / 3 / 2;
+  }
+
+  > .performance {
+    aspect-ratio: 1;
+    background-color: $darker;
+    border-radius: 5px;
+    grid-area: 2 / 2 / 3 / 3;
+  }
+
+  > .score {
+    aspect-ratio: 1;
+    background-color: #fbfbfb;
+    border-radius: 5px;
+    grid-area: 2 / 3 / 3 / 4;
+  }
+
+  > .nutrition {
+    grid-area: 1 / 4 / 3 / 5;
+  }
 }

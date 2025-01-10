@@ -3,7 +3,7 @@ import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts'
 
 function Sessions({ sessionsData }) {
   return (
-    <div className='sessions'>
+    <div className='component sessions'>
       <div className='caption'>Durée moyenne des sessions</div>
 
       <ResponsiveContainer width='100%' height='100%'>

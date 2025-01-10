@@ -12,7 +12,7 @@ import {
 
 function Activity({ activity }) {
   return (
-    <div className='activity'>
+    <div className='component activity'>
       <div className='caption'>
         <div className='emphasis'>Activité quotidienne</div>
         <div className='label subtext'>

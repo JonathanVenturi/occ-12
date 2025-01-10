@@ -10,6 +10,7 @@ import { useUserPerformance } from '../hooks/UseUserPerformance'
 import { useUserNutritionData } from '../hooks/UseUserNutritionData'
 
 // Import needed components
+import Loader from '../components/Loader'
 import Activity from '../components/Activity'
 import Sessions from '../components/Sessions'
 import Performance from '../components/Performance'
@@ -50,67 +51,55 @@ function Dashboard() {
 
   return (
     <>
-      {userInfos.status == 'ready' ? (
-        <div className='daily-summary'>
-          <h1>
-            Bonjour <span className='highlight'>{firstName}</span>
-          </h1>
-          <p>{summary}</p>
-        </div>
-      ) : (
-        <div className='daily-summary'>
-          <div className='loader'>
-            <div className='spinner'></div>
-          </div>
-        </div>
-      )}
+      <div className='daily-summary'>
+        {userInfos.status == 'ready' ? (
+          <>
+            <h1>
+              Bonjour <span className='highlight'>{firstName}</span>
+            </h1>
+            <p>{summary}</p>
+          </>
+        ) : (
+          <Loader status={userInfos.status} />
+        )}
+      </div>
 
       <div className='dashboard'>
-        {userActivity.status == 'ready' ? (
-          <Activity activity={userActivity.data} />
-        ) : (
-          <div className='activity'>
-            <div className='loader'>
-              <div className='spinner'></div>
-            </div>
-          </div>
-        )}
-        {userSessions.status == 'ready' ? (
-          <Sessions sessionsData={userSessions.data} />
-        ) : (
-          <div className='sessions'>
-            <div className='loader'>
-              <div className='spinner'></div>
-            </div>
-          </div>
-        )}
-        {userPerformance.status == 'ready' ? (
-          <Performance performanceData={userPerformance.data} />
-        ) : (
-          <div className='performance'>
-            <div className='loader'>
-              <div className='spinner'></div>
-            </div>
-          </div>
-        )}
-        {userInfos.status == 'ready' ? (
-          <Score score={score} />
-        ) : (
-          <div className='score'>
-            <div className='loader'>
-              <div className='spinner'></div>
-            </div>
-          </div>
-        )}
-        {userNutritionData.status == 'ready' ? (
-          <Nutrition nutritionData={userNutritionData.data} />
-        ) : (
-          <div className='keydata'>
-            <div className='loader'>
-              <div className='spinner'></div>
-            </div>
-          </div>
-        )}
+        <div className='activity'>
+          {userActivity.status == 'ready' ? (
+            <Activity activity={userActivity.data} />
+          ) : (
+            <Loader status={userActivity.status} />
+          )}
+        </div>
+        <div className='sessions'>
+          {userSessions.status == 'ready' ? (
+            <Sessions sessionsData={userSessions.data} />
+          ) : (
+            <Loader status={userSessions.status} />
+          )}
+        </div>
+        <div className='performance'>
+          {userPerformance.status == 'ready' ? (
+            <Performance performanceData={userPerformance.data} />
+          ) : (
+            <Loader status={userPerformance.status} />
+          )}
+        </div>
+        <div className='score'>
+          {userInfos.status == 'ready' ? (
+            <Score score={score} />
+          ) : (
+            <Loader status={userInfos.status} />
+          )}
+        </div>
+        <div className='nutrition'>
+          {userNutritionData.status == 'ready' ? (
+            <Nutrition nutritionData={userNutritionData.data} />
+          ) : (
+            <Loader status={userNutritionData.status} />
+          )}
+        </div>
       </div>
     </>
   )

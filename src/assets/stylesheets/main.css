@@ -52,20 +52,15 @@ h1 {
   font-weight: 500;
 }
 
-.daily-summary {
-  padding-bottom: 30px;
-}
-
-.activity {
+.component.activity {
   position: relative;
-  background-color: #fbfbfb;
-  border-radius: 5px;
-  grid-area: 1/1/2/4;
+  height: 100%;
+  width: 100%;
 }
-.activity .recharts-layer {
+.component.activity .recharts-layer {
   font-size: 0.8rem;
 }
-.activity .caption {
+.component.activity .caption {
   position: absolute;
   width: 100%;
   padding: 20px;
@@ -73,11 +68,11 @@ h1 {
   align-items: center;
   justify-content: space-between;
 }
-.activity .caption .label {
+.component.activity .caption .label {
   display: flex;
   gap: 30px;
 }
-.activity .caption .label .dot::before {
+.component.activity .caption .label .dot::before {
   content: " ";
   display: inline-block;
   height: 10px;
@@ -85,54 +80,53 @@ h1 {
   margin-right: 10px;
   border-radius: 5px;
 }
-.activity .caption .label .dot.black::before {
+.component.activity .caption .label .dot.black::before {
   background-color: #282d30;
 }
-.activity .caption .label .dot.red::before {
+.component.activity .caption .label .dot.red::before {
   background-color: #ff0101;
 }
 
-.sessions {
+.component.sessions {
+  height: 100%;
+  width: 100%;
   position: relative;
-  aspect-ratio: 1;
-  background-color: #ff0000;
-  border-radius: 5px;
-  grid-area: 2/1/3/2;
 }
-.sessions .caption {
+.component.sessions .caption {
   position: absolute;
   width: 60%;
   padding: 20px;
   font-weight: 500;
   color: #ffffff;
 }
-.sessions .recharts-layer {
+.component.sessions .recharts-layer {
   font-size: 0.8rem;
 }
-.sessions .recharts-default-tooltip {
+.component.sessions .recharts-default-tooltip {
   color: #282d30;
 }
 
-.performance {
-  aspect-ratio: 1;
-  background-color: #282d30;
-  border-radius: 5px;
-  grid-area: 2/2/3/3;
+.component.performance {
+  height: 100%;
+  width: 100%;
+}
+.component.performance .recharts-layer {
+  text-transform: capitalize;
+  font-size: 0.8rem;
+  font-weight: 500;
 }
 
-.score {
+.component.score {
+  height: 100%;
+  width: 100%;
   position: relative;
-  aspect-ratio: 1;
-  background-color: #fbfbfb;
-  border-radius: 5px;
-  grid-area: 2/3/3/4;
 }
-.score .label {
+.component.score .label {
   position: absolute;
   padding: 20px;
   font-weight: bold;
 }
-.score .caption {
+.component.score .caption {
   position: absolute;
   height: 75%;
   width: 75%;
@@ -148,20 +142,21 @@ h1 {
   font-weight: 500;
   text-wrap: balance;
 }
-.score .caption .emphasis {
+.component.score .caption .emphasis {
   color: #282d30;
   font-size: 2rem;
   font-weight: bold;
 }
 
-.keydata {
-  grid-area: 1/4/3/5;
+.component.nutrition {
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
   justify-content: space-between;
 }
-.keydata > div {
+.component.nutrition > div {
   height: 20%;
   padding: 10px;
   display: flex;
@@ -170,10 +165,10 @@ h1 {
   background-color: #fbfbfb;
   border-radius: 5px;
 }
-.keydata .dataentry .emphasis {
+.component.nutrition .dataentry .emphasis {
   font-size: 1.25rem;
 }
-.keydata .dataentry .subtext {
+.component.nutrition .dataentry .subtext {
   font-size: 0.9rem;
 }
 
@@ -262,10 +257,40 @@ header nav .active {
   transform: rotate(-180deg);
 }
 
+.daily-summary {
+  padding-bottom: 30px;
+}
+
 .dashboard {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 20px;
   grid-row-gap: 20px;
+}
+.dashboard > .activity {
+  grid-area: 1/1/2/4;
+  background-color: #fbfbfb;
+  border-radius: 5px;
+}
+.dashboard > .sessions {
+  aspect-ratio: 1;
+  background-color: #ff0000;
+  border-radius: 5px;
+  grid-area: 2/1/3/2;
+}
+.dashboard > .performance {
+  aspect-ratio: 1;
+  background-color: #282d30;
+  border-radius: 5px;
+  grid-area: 2/2/3/3;
+}
+.dashboard > .score {
+  aspect-ratio: 1;
+  background-color: #fbfbfb;
+  border-radius: 5px;
+  grid-area: 2/3/3/4;
+}
+.dashboard > .nutrition {
+  grid-area: 1/4/3/5;
 }

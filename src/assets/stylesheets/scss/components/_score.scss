@@ -1,9 +1,7 @@
-.score {
+.component.score {
+  height: 100%;
+  width: 100%;
   position: relative;
-  aspect-ratio: 1;
-  background-color: #fbfbfb;
-  border-radius: 5px;
-  grid-area: 2 / 3 / 3 / 4;
 
   .label {
     position: absolute;

@@ -1,6 +1,10 @@
-.performance {
-  aspect-ratio: 1;
-  background-color: $darker;
-  border-radius: 5px;
-  grid-area: 2 / 2 / 3 / 3;
+.component.performance {
+  height: 100%;
+  width: 100%;
+
+  .recharts-layer {
+    text-transform: capitalize;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
 }
