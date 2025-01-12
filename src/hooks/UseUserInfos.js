@@ -1,9 +1,9 @@
-import { useAPI } from './UseAPI'
+import { useServiceAPI } from './UseServiceAPI'
 import { UserInfos } from '../models/UserInfos'
 
 export function useUserInfos(id) {
   const requestURL = 'user/' + id
-  const { response, error, pending } = useAPI(requestURL)
+  const { response, error, pending } = useServiceAPI(requestURL)
 
   let status = ''
   let data = new UserInfos()

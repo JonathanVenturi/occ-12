@@ -50,7 +50,7 @@ function Dashboard() {
   }
 
   return (
-    <>
+    <div className='centered'>
       <div className='daily-summary'>
         {userInfos.status == 'ready' ? (
           <>
@@ -101,7 +101,7 @@ function Dashboard() {
           )}
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

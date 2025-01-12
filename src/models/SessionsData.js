@@ -11,8 +11,9 @@ export class SessionsData {
         typeof entry.day === 'number' &&
         typeof entry.sessionLength === 'number'
       ) {
+        let weekdays = '-LMMJVSD-'
         sessionsData.push({
-          day: entry.day,
+          day: weekdays[entry.day],
           sessionLength: entry.sessionLength
         })
       }

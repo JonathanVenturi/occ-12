@@ -1,20 +1,27 @@
 #sidebar {
   min-width: 110px;
+  height: 100%;
+  padding-bottom: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: black;
 
   nav {
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 20px;
   }
 
   .copyright {
     color: white;
+    font-size: 0.75rem;
+    font-weight: 500;
     writing-mode: vertical-rl;
+    white-space: nowrap;
     transform: rotate(-180deg);
   }
 }

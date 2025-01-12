@@ -13,8 +13,8 @@ import icon_3 from './assets/images/icon_3.png'
 import icon_4 from './assets/images/icon_4.png'
 
 function App() {
-  // TODO - Bool variable for API
-
+  // Setting up UserID
+  // This should handled through Auth system
   const [UserID, setUserID] = useState(18)
 
   return (
@@ -53,8 +53,7 @@ function App() {
               <Route path='/profile' element={<Profile />} />
               <Route path='/settings' element={<Settings />} />
               <Route path='/community' element={<Dashboard />} />
-
-              {/* TODO - Error page for API calls */}
+              {/* TODO - Error page for 404 */}
             </Routes>
           </main>
         </div>

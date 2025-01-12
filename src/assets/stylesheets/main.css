@@ -57,20 +57,34 @@ h1 {
   height: 100%;
   width: 100%;
 }
-.component.activity .recharts-layer {
-  font-size: 0.8rem;
+.component.activity .custom-tooltip {
+  padding: 10px;
+  background-color: #e60000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  color: #ffffff;
+  font-size: 0.625rem;
+  font-weight: 500;
+}
+.component.activity .custom-axis {
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 .component.activity .caption {
   position: absolute;
   width: 100%;
-  padding: 20px;
+  padding: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 0.938rem;
 }
 .component.activity .caption .label {
   display: flex;
   gap: 30px;
+  font-size: 0.875rem;
 }
 .component.activity .caption .label .dot::before {
   content: " ";
@@ -84,7 +98,7 @@ h1 {
   background-color: #282d30;
 }
 .component.activity .caption .label .dot.red::before {
-  background-color: #ff0101;
+  background-color: #e60000;
 }
 
 .component.sessions {
@@ -94,16 +108,19 @@ h1 {
 }
 .component.sessions .caption {
   position: absolute;
-  width: 60%;
-  padding: 20px;
+  width: 80%;
+  padding: 30px;
   font-weight: 500;
   color: #ffffff;
+  font-size: 0.938rem;
+  opacity: 0.5;
 }
-.component.sessions .recharts-layer {
-  font-size: 0.8rem;
-}
-.component.sessions .recharts-default-tooltip {
+.component.sessions .custom-tooltip {
+  padding: 10px;
+  background-color: #ffffff;
   color: #282d30;
+  font-size: 0.625rem;
+  font-weight: 500;
 }
 
 .component.performance {
@@ -112,7 +129,7 @@ h1 {
 }
 .component.performance .recharts-layer {
   text-transform: capitalize;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 500;
 }
 
@@ -123,14 +140,17 @@ h1 {
 }
 .component.score .label {
   position: absolute;
-  padding: 20px;
+  z-index: 99;
+  padding: 30px;
+  color: #282d30;
+  font-size: 0.938rem;
   font-weight: bold;
 }
 .component.score .caption {
   position: absolute;
-  height: 75%;
-  width: 75%;
-  margin: 12.5%;
+  height: 60%;
+  width: 60%;
+  margin: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -141,10 +161,11 @@ h1 {
   color: #74798c;
   font-weight: 500;
   text-wrap: balance;
+  line-height: 1.8rem;
 }
 .component.score .caption .emphasis {
   color: #282d30;
-  font-size: 2rem;
+  font-size: 1.625rem;
   font-weight: bold;
 }
 
@@ -153,23 +174,29 @@ h1 {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
   justify-content: space-between;
+  gap: 30px;
 }
 .component.nutrition > div {
-  height: 20%;
-  padding: 10px;
+  padding: 30px;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
   background-color: #fbfbfb;
   border-radius: 5px;
 }
+@media (max-width: 1240px) {
+  .component.nutrition > div {
+    padding: 20px;
+    gap: 20px;
+  }
+}
 .component.nutrition .dataentry .emphasis {
   font-size: 1.25rem;
+  padding-bottom: 5px;
 }
 .component.nutrition .dataentry .subtext {
-  font-size: 0.9rem;
+  font-size: 0.875rem;
 }
 
 .loader {
@@ -204,12 +231,24 @@ h1 {
 }
 #content main {
   flex: 1 1 auto;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#content .centered {
+  padding: 30px;
+  width: 100%;
+  max-width: 1180px;
+}
+@media (max-width: 1240px) {
+  #content .centered {
+    padding: 20px;
+  }
 }
 
 header {
   height: 90px;
-  padding: 0 50px 0 20px;
+  padding-left: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -217,9 +256,10 @@ header {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   color: white;
   font-size: 1.5rem;
+  font-weight: 500;
 }
 header .logo {
-  min-width: 300px;
+  min-width: 25%;
   display: flex;
   align-items: center;
   gap: 15px;
@@ -228,45 +268,76 @@ header .logo span {
   color: #ff0101;
 }
 header nav {
-  color: #ffffff;
+  padding: 0 50px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  color: #ffffff;
 }
 header nav .active {
   font-weight: 900;
+  text-decoration: underline;
 }
 
 #sidebar {
   min-width: 110px;
+  height: 100%;
+  padding-bottom: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: black;
 }
 #sidebar nav {
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 20px;
 }
 #sidebar .copyright {
   color: white;
+  font-size: 0.75rem;
+  font-weight: 500;
   writing-mode: vertical-rl;
+  white-space: nowrap;
   transform: rotate(-180deg);
 }
 
 .daily-summary {
-  padding-bottom: 30px;
+  padding: 20px 0 80px 0;
+}
+.daily-summary > h1 {
+  padding-bottom: 20px;
+  font-weight: 500;
+}
+.daily-summary > p {
+  font-size: 1.125rem;
+}
+@media (max-width: 1240px) {
+  .daily-summary {
+    padding: 0 0 20px 0;
+  }
+  .daily-summary > h1 {
+    padding-bottom: 10px;
+  }
 }
 
 .dashboard {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
+  grid-template-rows: 320px 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+}
+@media (max-width: 1240px) {
+  .dashboard {
+    grid-template-rows: 280px 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
 }
 .dashboard > .activity {
   grid-area: 1/1/2/4;

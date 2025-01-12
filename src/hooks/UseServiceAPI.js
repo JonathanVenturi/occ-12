@@ -3,7 +3,7 @@ import axios from 'axios'
 // Data file for the mock API
 import MOCK_API_DATA from '../assets/data/data.js'
 
-export function useAPI(request) {
+export function useServiceAPI(request) {
   // Switch for the mock API
   const usesMockData = false
   axios.defaults.baseURL = 'http://localhost:3000'

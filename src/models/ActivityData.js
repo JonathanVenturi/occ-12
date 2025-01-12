@@ -12,8 +12,9 @@ export class ActivityData {
         typeof entry.kilogram === 'number' &&
         typeof entry.calories === 'number'
       ) {
+        let day = new Date(entry.day)
         activityData.push({
-          day: entry.day,
+          day: day.getDate(),
           kilogram: entry.kilogram,
           calories: entry.calories
         })

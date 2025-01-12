@@ -8,20 +8,20 @@ function Profile() {
   const { firstName, lastName, age } = userInfos.data
 
   return (
-    <>
+    <div className='centered'>
       {userInfos.status == 'ready' ? (
-        <div>
+        <>
           <h1>
             <span className='highlight'>{firstName} </span>
             {lastName}
           </h1>
           <h2 className='subtext'>{age} ans</h2>
           <p>Current UserID is : {UserID}</p>
-        </div>
+        </>
       ) : (
         <div>No Data</div>
       )}
-    </>
+    </div>
   )
 }
 

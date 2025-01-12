@@ -1,9 +1,9 @@
-import { useAPI } from './UseAPI'
+import { useServiceAPI } from './UseServiceAPI'
 import { ActivityData } from '../models/ActivityData'
 
 export function useUserActivity(id) {
   const requestURL = 'user/' + id + '/activity'
-  const { response, error, pending } = useAPI(requestURL)
+  const { response, error, pending } = useServiceAPI(requestURL)
 
   let status = ''
   let data = new ActivityData()

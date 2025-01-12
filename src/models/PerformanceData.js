@@ -5,18 +5,57 @@ export class PerformanceData {
   }
 
   FormatData(data) {
-    const performanceData = []
-    data.data.forEach((entry) => {
-      if (
-        typeof entry.value === 'number' &&
-        typeof data.kind[entry.kind] === 'string'
-      ) {
-        performanceData.push({
-          kind: data.kind[entry.kind],
-          value: entry.value
-        })
+    const performanceData = [
+      {
+        kind: 'Intensité',
+        value: data.data.find(
+          (item) =>
+            item.kind ==
+            Object.keys(data.kind).find((key) => data.kind[key] === 'intensity')
+        ).value
+      },
+      {
+        kind: 'Vitesse',
+        value: data.data.find(
+          (item) =>
+            item.kind ==
+            Object.keys(data.kind).find((key) => data.kind[key] === 'speed')
+        ).value
+      },
+      {
+        kind: 'Force',
+        value: data.data.find(
+          (item) =>
+            item.kind ==
+            Object.keys(data.kind).find((key) => data.kind[key] === 'strength')
+        ).value
+      },
+      {
+        kind: 'Endurance',
+        value: data.data.find(
+          (item) =>
+            item.kind ==
+            Object.keys(data.kind).find((key) => data.kind[key] === 'endurance')
+        ).value
+      },
+      {
+        kind: 'Energie',
+        value: data.data.find(
+          (item) =>
+            item.kind ==
+            Object.keys(data.kind).find((key) => data.kind[key] === 'energy')
+        ).value
+      },
+      {
+        kind: 'Cardio',
+        value: data.data.find(
+          (item) =>
+            item.kind ==
+            Object.keys(data.kind).find((key) => data.kind[key] === 'cardio')
+        ).value
       }
-    })
+    ]
+
     return performanceData
   }
 }

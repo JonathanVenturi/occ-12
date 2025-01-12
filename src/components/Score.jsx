@@ -17,13 +17,14 @@ function Score({ score }) {
     <div className='component score'>
       <div className='label'>Score</div>
       <div className='caption'>
-        <span className='emphasis'>{score}%</span> de votre objectif
+        <span className='emphasis'>{score}%</span> de votre
+        <br /> objectif
       </div>
       <ResponsiveContainer width='100%' height='100%'>
         <RadialBarChart
-          innerRadius='70%'
-          outerRadius='90%'
-          barSize={20}
+          innerRadius='50%'
+          outerRadius='80%'
+          barSize={10}
           startAngle={90}
           endAngle={-270}
           data={data}>

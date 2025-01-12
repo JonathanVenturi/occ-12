@@ -3,21 +3,36 @@
   height: 100%;
   width: 100%;
 
-  .recharts-layer {
-    font-size: 0.8rem;
+  .custom-tooltip {
+    padding: 10px;
+    background-color: #e60000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    color: #ffffff;
+    font-size: 0.625rem;
+    font-weight: 500;
+  }
+
+  .custom-axis {
+    font-size: 0.875rem;
+    font-weight: 500;
   }
 
   .caption {
     position: absolute;
     width: 100%;
-    padding: 20px;
+    padding: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size: 0.938rem;
 
     .label {
       display: flex;
       gap: 30px;
+      font-size: 0.875rem;
 
       .dot::before {
         content: ' ';
@@ -27,12 +42,11 @@
         margin-right: 10px;
         border-radius: 5px;
       }
-
       .dot.black::before {
         background-color: $darker;
       }
       .dot.red::before {
-        background-color: $primary;
+        background-color: #e60000;
       }
     }
   }

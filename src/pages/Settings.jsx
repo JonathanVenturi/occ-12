@@ -5,7 +5,7 @@ function Settings() {
   const { UserID, setUserID } = useContext(UserContext)
 
   return (
-    <div>
+    <div className='centered'>
       <p>Settings - Current User is : {UserID}</p>
       <button onClick={swapUser}>Swap User</button>
     </div>

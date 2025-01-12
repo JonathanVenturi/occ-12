@@ -5,17 +5,19 @@
 
   .caption {
     position: absolute;
-    width: 60%;
-    padding: 20px;
+    width: 80%;
+    padding: 30px;
     font-weight: 500;
     color: #ffffff;
+    font-size: 0.938rem;
+    opacity: 0.5;
   }
 
-  .recharts-layer {
-    font-size: 0.8rem;
-  }
-
-  .recharts-default-tooltip {
+  .custom-tooltip {
+    padding: 10px;
+    background-color: #ffffff;
     color: $darker;
+    font-size: 0.625rem;
+    font-weight: 500;
   }
 }

@@ -12,10 +12,14 @@ function Performance({ performanceData }) {
   return (
     <div className='component performance'>
       <ResponsiveContainer width='100%' height='100%'>
-        <RadarChart outerRadius='60%' data={performanceData}>
-          <PolarGrid />
-          <PolarAngleAxis dataKey='kind' />
-          <Radar dataKey='value' stroke='red' fill='red' fillOpacity={0.6} />
+        <RadarChart outerRadius='70%' data={performanceData}>
+          <PolarGrid radialLines={false} stroke='white' />
+          <PolarAngleAxis
+            dataKey='kind'
+            tick={{ fill: 'white' }}
+            tickSize={5}
+          />
+          <Radar dataKey='value' fill='red' fillOpacity={0.7} />
         </RadarChart>
       </ResponsiveContainer>
     </div>
